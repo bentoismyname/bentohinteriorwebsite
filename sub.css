@@ -388,3 +388,32 @@ section.sp-sec--bk:has(.sp-quote) > .pad{width:100%}
   .bp-author{flex-direction:column;gap:14px}
   .bp-title{max-width:none}
 }
+
+/* blog titles use the width, fewer lines (user, 2026-11-19) */
+.bp-head{max-width:calc(1240px + var(--pad) * 2)}
+.bp-title{max-width:none;font-size:clamp(32px,4vw,60px);line-height:.98;text-wrap:balance}
+
+/* project stories: magazine layout (2026-11-19) */
+.bp-hero--full{max-width:none;padding-left:0;padding-right:0}
+.bp-hero--full img{aspect-ratio:auto;height:min(78vh,900px);min-height:320px}
+.bp-stand{font-size:clamp(20px,1.9vw,26px);line-height:1.42;color:var(--bk);font-weight:500}
+.bp-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 24px;margin:2em 0;padding:22px 0;border-top:1px solid rgba(10,10,10,.14);border-bottom:1px solid rgba(10,10,10,.14)}
+.bp-facts dt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g5)}
+.bp-facts dd{margin:6px 0 0;font-size:15px;line-height:1.4;font-weight:600;color:var(--bk)}
+.bp-drop::first-letter{float:left;font-family:var(--disp);font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;font-size:4.7em;line-height:.76;padding:.07em .09em 0 0;color:var(--bk);text-transform:uppercase}
+.bp-wide,.bp-duo{position:relative;left:50%;transform:translateX(-50%);width:min(1240px,calc(100vw - var(--pad) * 2));margin:2.6em 0}
+.bp-wide img{aspect-ratio:16/10;object-fit:cover}
+.bp-duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(10px,1.4vw,20px)}
+.bp-duo figure{margin:0}
+.bp-duo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--g1)}
+.bp-duo figcaption{margin-top:10px;font-size:13.5px;line-height:1.5;color:var(--g5)}
+@media (max-width:600px){
+  .bp-facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .bp-duo{grid-template-columns:minmax(0,1fr);gap:22px}
+  .bp-hero--full img{height:auto;aspect-ratio:4/3;min-height:0}
+}
+/* paired photos a little narrower than the wide ones so a pair fits one screen */
+.bp-duo{width:min(1040px,calc(100vw - var(--pad) * 2))}
+/* ...and never taller than the screen on short laptops */
+@media (min-width:601px){.bp-duo{width:min(1040px,calc(100vw - var(--pad) * 2),calc(128vh + 20px))}}
+.bp-duo img,.bp-wide img{height:auto}
