@@ -421,3 +421,11 @@ section.sp-sec--bk:has(.sp-quote) > .pad{width:100%}
 /* Features hero: the outlet name boxes are replaced by the scrolling colour logos from the home page (user, 2026-11-19) */
 .sp-hero__solo--logos{padding-bottom:clamp(30px,5vh,56px)}
 .sp-press{padding-bottom:clamp(44px,8vh,96px)}
+
+/* Features hero (user, 2026-11-19): headline on one line, intro on one line, label in M2D orange */
+.sp-hero__solo--logos{grid-template-columns:minmax(0,1fr)}
+.sp-hero__solo--logos .lab{color:var(--m2d)}
+@media (min-width:761px){.sp-hero__solo--logos .sp-h1,.sp-hero__solo--logos .sp-lead{white-space:nowrap;max-width:none}}
+
+/* page hero labels in M2D orange: Features, About, Blog (user, 2026-11-19); Contact matches so every page top is the same */
+.sp-hero .lab,.sp-hero--full .lab{color:var(--m2d)}

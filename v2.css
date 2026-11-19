@@ -916,3 +916,33 @@ a.b--black,button.b--black,.b--black{background:var(--m2d);border-color:var(--m2
 
 /* hero: Ben closer (user picked the middle of three, 2026-11-19). About 30% larger, head at the same height, cut just below the belt by the bottom of the hero */
 @media (min-width:901px){.hero2__ben{height:min(112%,68vw);bottom:calc(min(112%,68vw) * -0.232)}}
+
+/* hero: "Designer · Founder · Entrepreneur" label in M2D orange (user, 2026-11-19) */
+.hero2__left .lab{color:var(--m2d)}
+/* ...but only on desktop: on phones the label sits over the photo and orange is hard to read, so it stays grey there (user, 2026-11-19) */
+@media (max-width:900px){.hero2__left .lab{color:var(--g5)}}
+
+/* phones: the hero label is orange here too (user, 2026-11-19). A soft white backing sits behind the hero words so the label reads clearly over the photo */
+@media (max-width:900px){
+  .hero2__left .lab{color:var(--m2d)}
+  .hero2__left::before{content:"";position:absolute;left:calc(var(--pad) * -1);right:calc(var(--pad) * -1);top:-46px;bottom:-320px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.9) 34px,#fff 58px)}
+}
+
+/* phones (user, 2026-11-19): hero words sit lower and the big white fade over the photo is gone, so more of Ben shows.
+   The white backing behind the words (above) is now the only fade, starting just above the orange label. */
+@media (max-width:900px){
+  .hero2__board::after{display:none}
+  .hero2__right{bottom:10px}
+  .hero2__right .lab{margin-bottom:2px}
+  .feat__slot{height:30px}
+  .hero2__left{bottom:66px}
+  .hero2__btns{margin-top:14px}
+  .hero2__left::before{top:-60px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.9) 40px,#fff 66px)}
+}
+
+/* phones (user, 2026-11-19): the label always fits on one line, and the soft white fade is replaced by a clean straight edge
+   just above it, so the photo simply stops where the words begin */
+@media (max-width:900px){
+  .hero2__left .lab{white-space:nowrap;font-size:min(11.5px,2.85vw);letter-spacing:.11em}
+  .hero2__left::before{top:-16px;background:#fff}
+}
