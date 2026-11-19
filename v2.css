@@ -946,3 +946,6 @@ a.b--black,button.b--black,.b--black{background:var(--m2d);border-color:var(--m2
   .hero2__left .lab{white-space:nowrap;font-size:min(11.5px,2.85vw);letter-spacing:.11em}
   .hero2__left::before{top:-16px;background:#fff}
 }
+
+/* ventures intro: no single word left alone on the last line */
+.ven__note{text-wrap:pretty}

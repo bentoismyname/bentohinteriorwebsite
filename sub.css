@@ -420,7 +420,7 @@ section.sp-sec--bk:has(.sp-quote) > .pad{width:100%}
 
 /* Features hero: the outlet name boxes are replaced by the scrolling colour logos from the home page (user, 2026-11-19) */
 .sp-hero__solo--logos{padding-bottom:clamp(30px,5vh,56px)}
-.sp-press{padding-bottom:clamp(44px,8vh,96px)}
+.awd__strip.sp-press{padding-bottom:clamp(44px,8vh,96px)}
 
 /* Features hero (user, 2026-11-19): headline on one line, intro on one line, label in M2D orange */
 .sp-hero__solo--logos{grid-template-columns:minmax(0,1fr)}
