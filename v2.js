@@ -385,3 +385,22 @@
     c.addEventListener('mouseleave',()=>v.pause());
   });
 })();
+
+/* ---------- Meet Ben photo: builds up from tiles, top left first (user, 2026-11-20) ---------- */
+(function(){
+  const pic=document.querySelector('.abt__pic'), fig=pic&&pic.querySelector('.abt__photo'), img=fig&&fig.querySelector('img');
+  if(!img||matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const C=4, R=5, grid=document.createElement('div');
+  grid.className='abt__tiles'; grid.setAttribute('aria-hidden','true');
+  for(let r=0;r<R;r++) for(let c=0;c<C;c++){
+    const t=document.createElement('i'), p=document.createElement('img');
+    p.alt=''; p.src=img.currentSrc||img.src;
+    t.style.setProperty('--d',((r+c)*0.075).toFixed(3)+'s');
+    p.style.setProperty('--x',(-c*100)+'%'); p.style.setProperty('--y',(-r*100)+'%');
+    t.appendChild(p); grid.appendChild(t);
+  }
+  fig.appendChild(grid); pic.classList.add('has-tiles');
+  const go=()=>{ requestAnimationFrame(()=>pic.classList.add('tiles-go')); setTimeout(()=>pic.classList.add('tiles-done'),1500); };
+  if(pic.classList.contains('in')) go();
+  else new MutationObserver((m,o)=>{ if(pic.classList.contains('in')){ o.disconnect(); go(); } }).observe(pic,{attributes:true,attributeFilter:['class']});
+})();

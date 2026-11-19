@@ -949,3 +949,49 @@ a.b--black,button.b--black,.b--black{background:var(--m2d);border-color:var(--m2
 
 /* ventures intro: no single word left alone on the last line */
 .ven__note{text-wrap:pretty}
+
+/* hero (user, 2026-11-20): Ben centred in the white space to the right of the words.
+   The words and logos end about 610px from the left, so his centre sits halfway between there and the right edge.
+   47.7% is where his body's centre falls inside the cut-out (ben-stand.png). */
+@media (min-width:901px){
+  .hero2__ben,.ready .hero2__ben{left:calc(50% + 305px);right:auto;transform:translate(-47.7%,var(--py,0px))}
+}
+
+/* Meet Ben photo (user, 2026-11-20): the photo comes out first (wipes up from the bottom while settling from a slight zoom),
+   then the black line draws itself around it: top, right side, bottom, left side. Runs once when the section scrolls in. */
+.abt__pic[data-rv]{opacity:1;transform:none;transition:none}
+.abt__pic[data-rv] .abt__photo{clip-path:inset(100% 0 0 0);transition:clip-path 1.15s cubic-bezier(.7,0,.2,1)}
+.abt__pic[data-rv] .abt__photo img{transform:scale(1.18);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.abt__pic[data-rv].in .abt__photo{clip-path:inset(0 0 0 0)}
+.abt__pic[data-rv].in .abt__photo img{transform:none}
+.abt__pic[data-rv].in .abt__photo:hover img{transform:scale(1.03);transition-duration:1.2s}
+.abt__pic[data-rv] .abt__frame{border:0}
+.abt__pic[data-rv] .abt__frame::before,.abt__pic[data-rv] .abt__frame::after{content:"";position:absolute;box-sizing:border-box;width:0;height:0;border:0 solid transparent}
+.abt__pic[data-rv] .abt__frame::before{left:0;top:0;border-top-width:1.5px;border-right-width:1.5px}
+.abt__pic[data-rv] .abt__frame::after{right:0;bottom:0;border-bottom-width:1.5px;border-left-width:1.5px}
+.abt__pic[data-rv].in .abt__frame::before{width:100%;height:100%;border-color:#0a0a0a;
+  transition:width .38s linear 1.0s,height .5s cubic-bezier(.4,0,.2,1) 1.38s,border-color 0s 1.0s}
+.abt__pic[data-rv].in .abt__frame::after{width:100%;height:100%;border-color:#0a0a0a;
+  transition:width .38s linear 1.88s,height .5s cubic-bezier(.4,0,.2,1) 2.26s,border-color 0s 1.88s}
+@media (prefers-reduced-motion:reduce){
+  .abt__pic[data-rv] .abt__photo{clip-path:none;transition:none}.abt__pic[data-rv] .abt__photo img{transform:none;transition:none}
+  .abt__pic[data-rv] .abt__frame::before,.abt__pic[data-rv] .abt__frame::after{width:100%;height:100%;border-color:#0a0a0a;transition:none}
+}
+
+/* Meet Ben photo, take 2 (user, 2026-11-20, matching their reference reel): the photo builds up from square tiles that pop in
+   one after another, starting at the top left and running diagonally to the bottom right. The black line then draws in (above).
+   Tiles are added by v2.js; without JS the photo simply shows. */
+.abt__pic.has-tiles[data-rv] .abt__photo{clip-path:none;transition:none}
+.abt__pic.has-tiles[data-rv] .abt__photo>img{transform:none;opacity:0;transition:none}
+.abt__pic.has-tiles.tiles-done .abt__photo>img{opacity:1}
+.abt__pic.has-tiles.tiles-done .abt__photo:hover>img{transform:scale(1.03);transition:transform 1.2s var(--ease)}
+.abt__tiles{position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(5,1fr);pointer-events:none}
+.abt__tiles i{position:relative;overflow:hidden;transform:scale(.3);opacity:0;
+  transition:transform .55s cubic-bezier(.2,.75,.25,1) var(--d),opacity .3s ease var(--d)}
+.abt__pic .abt__tiles i img{position:absolute;aspect-ratio:auto;transform:none;opacity:1;transition:none;left:var(--x);top:var(--y);width:400%;height:500%;max-width:none;object-fit:cover}
+.tiles-go .abt__tiles i{transform:none;opacity:1}
+.tiles-done .abt__tiles{display:none}
+/* no grey box before the tiles arrive, and the black line starts as soon as the photo is complete */
+.abt__pic.has-tiles .abt__photo{background:transparent}
+.abt__pic.has-tiles[data-rv].in .abt__frame::before{transition:width .38s linear .6s,height .5s cubic-bezier(.4,0,.2,1) .98s,border-color 0s .6s}
+.abt__pic.has-tiles[data-rv].in .abt__frame::after{transition:width .38s linear 1.48s,height .5s cubic-bezier(.4,0,.2,1) 1.86s,border-color 0s 1.48s}
