@@ -910,3 +910,9 @@ a.b--black,button.b--black,.b--black{background:var(--m2d);border-color:var(--m2
   .wk__stage{height:clamp(1400px,148vw,2450px)}
   .wk__item--d{left:auto;right:6%;top:69%;width:30vw}
 }
+
+/* hero: standing cut-out (ben-stand.png, user 2026-11-19). It is narrower than the sofa one, so on phones he is shown larger and his legs run off the bottom behind the words */
+@media (max-width:900px){.hero2__ben{height:104%;bottom:-30%}}
+
+/* hero: Ben closer (user picked the middle of three, 2026-11-19). About 30% larger, head at the same height, cut just below the belt by the bottom of the hero */
+@media (min-width:901px){.hero2__ben{height:min(112%,68vw);bottom:calc(min(112%,68vw) * -0.232)}}

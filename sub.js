@@ -203,3 +203,11 @@
     },1900);
   }
 })();
+
+/* scrolling press logos (Features hero): copy the logos once so the strip loops with no gap, same as the home page */
+(function(){
+  const row=document.getElementById('awdRow'); if(!row) return;
+  [...row.children].forEach(f=>{ const c=f.cloneNode(true); c.setAttribute('aria-hidden','true'); row.appendChild(c); });
+  const set=()=>row.style.setProperty('--dur',Math.max(28,(row.scrollWidth/2)/55).toFixed(1)+'s');
+  set(); addEventListener('resize',set); addEventListener('load',set);
+})();

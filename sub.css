@@ -417,3 +417,7 @@ section.sp-sec--bk:has(.sp-quote) > .pad{width:100%}
 /* ...and never taller than the screen on short laptops */
 @media (min-width:601px){.bp-duo{width:min(1040px,calc(100vw - var(--pad) * 2),calc(128vh + 20px))}}
 .bp-duo img,.bp-wide img{height:auto}
+
+/* Features hero: the outlet name boxes are replaced by the scrolling colour logos from the home page (user, 2026-11-19) */
+.sp-hero__solo--logos{padding-bottom:clamp(30px,5vh,56px)}
+.sp-press{padding-bottom:clamp(44px,8vh,96px)}
