@@ -897,3 +897,16 @@ a.b--black,button.b--black,.b--black{background:var(--m2d);border-color:var(--m2
 /* venture card "Visit" links turn M2D orange on hover (user, 2026-11-19) */
 .vc__link{transition:color .3s ease}
 .vc a:hover .vc__link,.vc a:focus-visible .vc__link{color:var(--m2d)}
+
+/* Beyond design: Cardboard Clinic link (user, 2026-11-19) */
+.ven__beyond-text a{color:inherit;text-decoration:none}
+.ven__beyond-text b i{font-style:normal;font-size:.7em;margin-left:4px;display:inline-block;transition:transform .35s var(--ease)}
+.ven__beyond-text a b{transition:color .3s ease}
+.ven__beyond-text a:hover b,.ven__beyond-text a:focus-visible b{color:var(--m2d)}
+.ven__beyond-text a:hover b i{transform:translate(3px,-3px)}
+
+/* Works: four photos only (user, 2026-11-19) */
+@media (min-width:901px){
+  .wk__stage{height:clamp(1400px,148vw,2450px)}
+  .wk__item--d{left:auto;right:6%;top:69%;width:30vw}
+}
