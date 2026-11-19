@@ -995,3 +995,14 @@ a.b--black,button.b--black,.b--black{background:var(--m2d);border-color:var(--m2
 .abt__pic.has-tiles .abt__photo{background:transparent}
 .abt__pic.has-tiles[data-rv].in .abt__frame::before{transition:width .38s linear .6s,height .5s cubic-bezier(.4,0,.2,1) .98s,border-color 0s .6s}
 .abt__pic.has-tiles[data-rv].in .abt__frame::after{transition:width .38s linear 1.48s,height .5s cubic-bezier(.4,0,.2,1) 1.86s,border-color 0s 1.48s}
+
+/* phones (user, 2026-11-20): Ben smaller and centred, head higher up, showing down to his crossed hands with the white edge
+   just above his belt. His head sits at 17% of the hero; the belt is 65% down the cut-out and lines up with the edge above the words. */
+@media (max-width:900px){
+  .hero2__ben,.ready .hero2__ben{height:calc(127.1% - 340px);bottom:calc(340px - 44.1%);left:50%;right:auto;transform:translate(-47.7%,var(--py,0px))}
+}
+/* the white edge sits a little higher so the belt never shows, on small phones and tablets too */
+@media (max-width:900px){.hero2__left::before{top:-30px}}
+@media (min-width:601px) and (max-width:900px){.hero2__left::before{top:-46px}}
+/* the edge position is measured by v2.js so it always lands just above his belt, whatever the phone size or headline length */
+@media (max-width:900px){.hero2__left::before{top:var(--edge,-30px)}}

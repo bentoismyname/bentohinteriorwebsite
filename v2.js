@@ -404,3 +404,17 @@
   if(pic.classList.contains('in')) go();
   else new MutationObserver((m,o)=>{ if(pic.classList.contains('in')){ o.disconnect(); go(); } }).observe(pic,{attributes:true,attributeFilter:['class']});
 })();
+
+/* ---------- phones: place the white edge above the words just above Ben's belt (user, 2026-11-20) ---------- */
+(function(){
+  const ben=document.getElementById('heroBen'), left=document.getElementById('heroLeft'); if(!ben||!left) return;
+  const mq=matchMedia('(max-width:900px)');
+  const set=()=>{
+    if(!mq.matches){ left.style.removeProperty('--edge'); return; }
+    if(!ben.offsetHeight) return;
+    const belt=ben.offsetTop+ben.offsetHeight*(1068/1647);          // top of the belt in ben-stand.png, measured without animations
+    left.style.setProperty('--edge',Math.min(-16,Math.round(belt-left.offsetTop))+'px');
+  };
+  set(); addEventListener('resize',set); addEventListener('load',set); ben.addEventListener('load',set);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(set);
+})();
