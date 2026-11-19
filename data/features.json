@@ -1,0 +1,164 @@
+{
+  "note": "All media features, newest first. Add a new object at the top to publish it; year filters and counts update automatically. url is optional; cta is the link text (Listen / Read / Watch). img (optional) is a photo shown on hover; ar and w set its shape and width.",
+  "features": [
+    {
+      "date": "2026-07-26",
+      "label": "26 JUL 2026",
+      "year": 2026,
+      "outlet": "The Straits Times",
+      "title": "Small flats, big makeover (The Sunday Times)",
+      "role": "Quoted designer",
+      "url": "",
+      "cta": "Read",
+      "img": "assets/wins/straits-times-page.jpg",
+      "ar": "1232/1000",
+      "w": 440
+    },
+    {
+      "date": "2025-12-22",
+      "label": "22 DEC 2025",
+      "year": 2025,
+      "outlet": "SquareRooms",
+      "title": "Beyond the Render: M2D Interiors on Design Integrity",
+      "role": "Year-end profile",
+      "url": "",
+      "cta": "Read",
+      "img": "assets/moments/m4.jpg"
+    },
+    {
+      "date": "2025-11-10",
+      "label": "10 NOV 2025",
+      "year": 2025,
+      "outlet": "CNA",
+      "title": "The Big Read: Chinese brands gaining popularity",
+      "role": "Contributor",
+      "url": "",
+      "cta": "Read"
+    },
+    {
+      "date": "2025-10-09",
+      "label": "09 OCT 2025",
+      "year": 2025,
+      "outlet": "SPH Media",
+      "title": "Mind Your Business (podcast)",
+      "role": "Main guest",
+      "url": "",
+      "cta": "Listen",
+      "img": "assets/moments/moneyfm-893.jpg",
+      "ar": "3/4",
+      "w": 300
+    },
+    {
+      "date": "2025-08-30",
+      "label": "30 AUG 2025",
+      "year": 2025,
+      "outlet": "SquareRooms",
+      "title": "A curved minimalist BTO, designed with fengshui",
+      "role": "Lead designer",
+      "url": "https://squarerooms.com.sg/inspirations/minimalist-bto-style-fengshui/",
+      "cta": "Read"
+    },
+    {
+      "date": "2025-07-23",
+      "label": "23 JUL 2025",
+      "year": 2025,
+      "outlet": "CNA938",
+      "title": "Tiles, TikTok & Benjamin Toh’s take on SG home design (Rewind)",
+      "role": "Radio guest",
+      "url": "https://www.channelnewsasia.com/listen/cna938-rewind/tiles-tiktok-benjamin-tohs-take-sg-home-design-5251896",
+      "cta": "Listen",
+      "img": "assets/moments/m2.jpg"
+    },
+    {
+      "date": "2025-04-18",
+      "label": "18 APR 2025",
+      "year": 2025,
+      "outlet": "The Straits Times",
+      "title": "ST Life: Singapore millennial homes",
+      "role": "Quoted contributor",
+      "url": "",
+      "cta": "Read"
+    },
+    {
+      "date": "2025-02-28",
+      "label": "28 FEB 2025",
+      "year": 2025,
+      "outlet": "SPH Uchify",
+      "title": "Minimalism with excessive storage (Bentohinteriors reel)",
+      "role": "Featured creator",
+      "url": "",
+      "cta": "Watch"
+    },
+    {
+      "date": "2024-11-04",
+      "label": "04 NOV 2024",
+      "year": 2024,
+      "outlet": "Capital 958",
+      "title": "在我心深处 (Mandarin radio)",
+      "role": "Main guest",
+      "url": "",
+      "cta": "Listen"
+    },
+    {
+      "date": "2023-10-01",
+      "label": "01 OCT 2023",
+      "year": 2023,
+      "outlet": "SIXiDES",
+      "title": "Designer Showcase, Ep. 03",
+      "role": "Featured designer",
+      "url": "",
+      "cta": "Watch"
+    },
+    {
+      "date": "2023-09-04",
+      "label": "04 SEP 2023",
+      "year": 2023,
+      "outlet": "SIXiDES",
+      "title": "Designer Showcase, Ep. 02",
+      "role": "Featured designer",
+      "url": "",
+      "cta": "Watch"
+    },
+    {
+      "date": "2023-09-03",
+      "label": "03 SEP 2023",
+      "year": 2023,
+      "outlet": "SIXiDES",
+      "title": "Project Diary, Ep. 04: Quan Yifong home, Part 2",
+      "role": "Designer",
+      "url": "",
+      "cta": "Watch"
+    },
+    {
+      "date": "2023-08-20",
+      "label": "20 AUG 2023",
+      "year": 2023,
+      "outlet": "SIXiDES",
+      "title": "Project Diary, Ep. 03: Quan Yifong home, Part 1",
+      "role": "Designer",
+      "url": "",
+      "cta": "Watch"
+    },
+    {
+      "date": "2023-06-29",
+      "label": "29 JUN 2023",
+      "year": 2023,
+      "outlet": "SIXiDES",
+      "title": "Designer of the Month: Behind the Professionalism",
+      "role": "Editorial interview",
+      "url": "",
+      "cta": "Read",
+      "img": "assets/moments/m3.jpg"
+    },
+    {
+      "date": "2023-05-07",
+      "label": "07 MAY 2023",
+      "year": 2023,
+      "outlet": "SIXiDES",
+      "title": "Designer Showcase, Ep. 01",
+      "role": "Featured designer",
+      "url": "",
+      "cta": "Watch"
+    }
+  ]
+}

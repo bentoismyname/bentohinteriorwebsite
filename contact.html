@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | Benjamin Toh</title>
+<meta name="description" content="Contact Benjamin Toh: email, social, office address and a message form.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="v2.css">
+<link rel="stylesheet" href="sub.css">
+<script>try{if(sessionStorage.getItem('shut')){document.documentElement.classList.add('shut-in');window.__shut=1}}catch(e){}</script>
+</head>
+<body class="v2 ready" id="top">
+<div class="shut" aria-hidden="true" style="--n:6"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i></div>
+<header class="hd" id="hd">
+  <a class="hd__logo" href="index.html" aria-label="Benjamin Toh, home"><img class="hd__mono" src="assets/bt-monogram.png" alt=""><img class="hd__word" src="assets/bt-wordmark-text.png" alt="Benjamin Toh"></a>
+  <nav class="hd__nav" id="hdNav" aria-label="Primary">
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a class="b b--black hd__navcta" href="contact.html">Contact</a>
+  </nav>
+  <a class="b b--black hd__cta" href="contact.html" aria-current="page">Contact</a>
+  <button class="hd__menu" id="hdMenu" aria-expanded="false" aria-controls="hdNav" aria-label="Menu"><span></span><span></span></button>
+</header>
+
+<main>
+<!-- ============ CONTACT: hero ============ -->
+<section class="sp-hero" aria-label="Contact Benjamin Toh">
+  <p class="sp-hero__word dsp" data-fit="0.94" aria-hidden="true">Contact</p>
+  <div class="pad sp-hero__one">
+    <p class="lab" data-rv>Contact</p>
+    <h1 class="sp-h1 dsp" data-rv>Talk to Ben.</h1>
+  </div>
+</section>
+
+<!-- ============ details + form ============ -->
+<section class="sp-sec sp-sec--top0">
+  <div class="pad sp-contact">
+    <dl class="sp-dl" data-rv>
+      <div><dt>Email</dt><dd><a href="mailto:hello@bentohinteriors.com">hello@bentohinteriors.com</a></dd></div>
+      <div><dt>Media and speaking</dt><dd><a href="mailto:bentohjj@gmail.com?subject=Media%20enquiry">bentohjj@gmail.com</a></dd></div>
+      <div><dt>Office</dt><dd><a href="https://www.google.com/maps/place/M2+Decor+Pte+Ltd/@1.454737,103.7983522,17z/data=!4m6!3m5!1s0x31da139a0f66d853:0xc810eab93ec98c2e!8m2!3d1.454737!4d103.7983522" target="_blank" rel="noopener">38 Woodlands Industrial Park E1, #05-12<br>Singapore 757700</a></dd></div>
+      <div><dt>Social</dt><dd class="sp-social"><a href="https://instagram.com/bentohinteriors" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="6.9" r="1.2" fill="currentColor"/></svg></a><a href="https://www.tiktok.com/@bentohinteriors" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h2.6c.2 1.9 1.4 3.4 3.4 3.7v2.7c-1.3 0-2.5-.4-3.4-1v6.1c0 3-2.4 5.5-5.4 5.5S5.8 17.5 5.8 14.5s2.4-5.4 5.4-5.4c.3 0 .5 0 .8.1v2.8c-.3-.1-.5-.1-.8-.1-1.5 0-2.7 1.200-2.7 2.700s1.200 2.700 2.700 2.700S14 16 14 14.500z"/></svg></a><a href="https://www.linkedin.com/search/results/people/?keywords=Benjamin%20Toh%20Jun%20Jie" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="currentColor"/><g fill="#fff"><rect x="6" y="10" width="2.6" height="8"/><circle cx="7.3" cy="6.9" r="1.55"/><path d="M11 10h2.5v1.200c.5-.8 1.500-1.500 2.900-1.500 2.400 0 3.100 1.500 3.100 3.700V18H17v-4.100c0-1.100-.3-1.900-1.400-1.900-1.200 0-1.900.8-1.900 2V18H11z"/></g></svg></a></dd></div>
+    </dl>
+    <form class="sp-form" id="contactForm" novalidate data-rv>
+      <p class="lab">Send a message</p>
+      <div class="sp-form__row">
+        <label class="sp-field"><span>Your name</span><input type="text" name="name" autocomplete="name" required></label>
+        <label class="sp-field"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <div class="sp-form__row">
+        <label class="sp-field"><span>Phone (optional)</span><input type="tel" name="phone" autocomplete="tel"></label>
+        <label class="sp-field"><span>What is it about?</span>
+          <select name="topic">
+            <option>Just saying hello</option>
+            <option>Working with Ben</option>
+            <option>One of the ventures</option>
+            <option>The Brief: seminars and guides</option>
+            <option>Media or speaking</option>
+            <option>Something else</option>
+          </select></label>
+      </div>
+      <label class="sp-field"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+      <div class="sp-form__end">
+        <button class="b b--black" type="submit">Send message <i aria-hidden="true">→</i></button>
+        <p class="sp-form__note" id="contactNote" role="status" aria-live="polite">This opens your email app with the message ready to send.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ map: the office on Google Maps, full width ============ -->
+<section class="sp-map" aria-label="Map of the office">
+  <iframe title="M2 Decor office on Google Maps" src="https://www.google.com/maps?q=M2+Decor+Pte+Ltd,+38+Woodlands+Industrial+Park+E1,+Singapore+757700&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</section>
+</main>
+
+<footer class="ft ft--plain">
+  <div class="pad ft__cols ft__cols--2">
+    <div class="ft__brand">
+      <a class="ft__logo" href="index.html" aria-label="Benjamin Toh, home"><img class="ft__mono" src="assets/bt-monogram-white.png" alt=""><img class="ft__word" src="assets/bt-wordmark-text-white.png" alt="Benjamin Toh"></a>
+      <p class="ft__tag">Designer, founder and entrepreneur in Singapore. Changing lives, changing homes, changing how we live, for the better.</p>
+      <p class="ft__icons"><a href="mailto:hello@bentohinteriors.com" aria-label="Email hello@bentohinteriors.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.8 6.2 12 12.6l8.2-6.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></a><a href="https://instagram.com/bentohinteriors" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.1" cy="6.9" r="1.2" fill="currentColor"/></svg></a><a href="https://www.tiktok.com/@bentohinteriors" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 3h2.6c.2 1.9 1.4 3.4 3.4 3.7v2.7c-1.3 0-2.5-.4-3.4-1v6.1c0 3-2.4 5.5-5.4 5.5S5.8 17.5 5.8 14.5s2.4-5.4 5.4-5.4c.3 0 .5 0 .8.1v2.8c-.3-.1-.5-.1-.8-.1-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7S14 16 14 14.5z"/></svg></a><a href="https://www.linkedin.com/search/results/people/?keywords=Benjamin%20Toh%20Jun%20Jie" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 3.5a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM3.8 9h3.3v11H3.8zM9.4 9h3.1v1.5c.5-.9 1.7-1.8 3.4-1.8 3.4 0 4 2.2 4 5.1V20h-3.3v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H9.4z"/></svg></a></p>
+    </div>
+    <nav class="ft__col" aria-label="Pages">
+      <p class="ft__h">Pages</p>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="index.html#projects">Works</a><a href="index.html#ventures">Ventures</a><a href="features.html">Features</a><a href="contact.html">Contact</a>
+    </nav>
+    <nav class="ft__col" aria-label="Ventures">
+      <p class="ft__h">Ventures</p>
+      <a href="https://www.m2decor.com/" target="_blank" rel="noopener">M2D Interior Design</a><a href="index.html#ventures">M2D Carpentry</a><a href="index.html#ventures">M2D Handyman</a><a href="index.html#ventures">Beforekeys</a><a href="index.html#ebook">The Brief</a><a href="index.html#ventures">Home curation marketplace</a>
+    </nav>
+  </div>
+  <div class="pad ft__base">
+    <p class="ft__copy">© 2026 Bentoh Interiors · Singapore</p>
+  </div>
+  <p class="ft__name" data-fit="0.97" aria-hidden="true">Benjamin</p>
+</footer>
+
+<a class="wa" href="https://wa.me/6598221113" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script src="sub.js"></script>
+<script src="shutter.js"></script>
+</body>
+</html>
