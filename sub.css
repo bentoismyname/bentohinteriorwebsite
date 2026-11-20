@@ -429,3 +429,15 @@ section.sp-sec--bk:has(.sp-quote) > .pad{width:100%}
 
 /* page hero labels in M2D orange: Features, About, Blog (user, 2026-11-19); Contact matches so every page top is the same */
 .sp-hero .lab,.sp-hero--full .lab{color:var(--m2d)}
+
+/* About page photo beside "Who I am, and why I do this." (user, 2026-11-20): builds up from square tiles, top left first,
+   the same effect as the Meet Ben photo on the home page. Tiles are added by sub.js; without JS the photo simply shows. */
+.sp-intro__photo.has-tiles[data-rv]{position:relative;background:transparent;opacity:1;transform:none;transition:none}
+.sp-intro__photo.has-tiles>img{opacity:0}
+.sp-intro__photo.tiles-done>img{opacity:1}
+.sp-tiles{position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(5,1fr);pointer-events:none}
+.sp-tiles i{position:relative;overflow:hidden;transform:scale(.3);opacity:0;
+  transition:transform .55s cubic-bezier(.2,.75,.25,1) var(--d),opacity .3s ease var(--d)}
+.sp-tiles i img{position:absolute;left:var(--x);top:var(--y);width:400%;height:500%;max-width:none;aspect-ratio:auto;object-fit:cover;object-position:50% 38%}
+.tiles-go .sp-tiles i{transform:none;opacity:1}
+.tiles-done .sp-tiles{display:none}

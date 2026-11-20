@@ -64,12 +64,12 @@
     requestAnimationFrame(follow);
   }
 
-  /* contact form: there is no server behind this site, so the form writes the email for the visitor
-     and opens it in their own mail app, addressed to Benjamin */
+  /* contact form: sent through FormSubmit (formsubmit.co), which emails it to Benjamin at bentohint@gmail.com.
+     The very first message makes FormSubmit email Benjamin an "Activate" link; after he clicks it, every message arrives. */
   const cf=$('contactForm');
   if(cf){
-    const note=$('contactNote'), TO='hello@bentohinteriors.com';
-    cf.addEventListener('submit',e=>{
+    const note=$('contactNote'), TO='bentohint@gmail.com', POST='https://formsubmit.co/ajax/'+TO;
+    cf.addEventListener('submit',async e=>{
       e.preventDefault();
       const f=n=>(cf.elements[n].value||'').trim();
       let bad=null;
@@ -78,11 +78,22 @@
         el.closest('.sp-field').classList.toggle('err',!ok); if(!ok&&!bad) bad=el;
       });
       if(bad){ note.textContent='Please fill in your name, a valid email and a short message.'; note.className='sp-form__note err'; bad.focus(); return; }
-      const subject='Enquiry: '+f('topic')+' ('+f('name')+')';
-      const body=['Name: '+f('name'),'Email: '+f('email'),f('phone')?'Phone: '+f('phone'):'','About: '+f('topic'),'',f('message')].filter((l,i)=>l!==''||i===4).join('\n');
-      location.href='mailto:'+TO+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-      note.className='sp-form__note ok';
-      note.textContent='Your email app should now be open with the message ready to send. If nothing opened, write to '+TO+'.';
+      if(f('_honey')) return;                                    // hidden field only bots fill in
+      const btn=cf.querySelector('button[type=submit]');
+      btn.disabled=true; note.className='sp-form__note'; note.textContent='Sending...';
+      try{
+        const r=await fetch(POST,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({name:f('name'),email:f('email'),phone:f('phone')||'-',about:f('topic'),message:f('message'),
+            _subject:'Website enquiry: '+f('topic')+' ('+f('name')+')',_template:'table'})});
+        const j=await r.json().catch(()=>({}));
+        if(!r.ok||String(j.success)!=='true') throw new Error(j.message||r.status);
+        note.className='sp-form__note ok';
+        note.textContent='Thank you, '+f('name').split(' ')[0]+'. Your message has been sent. Benjamin will reply to '+f('email')+'.';
+        cf.reset();
+      }catch(err){
+        note.className='sp-form__note err';
+        note.textContent='Sorry, that did not go through. Please try again, or email '+TO+'.';
+      }finally{ btn.disabled=false; }
     });
   }
 
@@ -210,4 +221,23 @@
   [...row.children].forEach(f=>{ const c=f.cloneNode(true); c.setAttribute('aria-hidden','true'); row.appendChild(c); });
   const set=()=>row.style.setProperty('--dur',Math.max(28,(row.scrollWidth/2)/55).toFixed(1)+'s');
   set(); addEventListener('resize',set); addEventListener('load',set);
+})();
+
+/* About photo: builds up from tiles, top left first, like the Meet Ben photo on the home page (user, 2026-11-20) */
+(function(){
+  const fig=document.querySelector('.sp-intro__photo'), img=fig&&fig.querySelector('img');
+  if(!img||matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const C=4, R=5, grid=document.createElement('div');
+  grid.className='sp-tiles'; grid.setAttribute('aria-hidden','true');
+  for(let r=0;r<R;r++) for(let c=0;c<C;c++){
+    const t=document.createElement('i'), p=document.createElement('img');
+    p.alt=''; p.src=img.currentSrc||img.src;
+    t.style.setProperty('--d',((r+c)*0.075).toFixed(3)+'s');
+    p.style.setProperty('--x',(-c*100)+'%'); p.style.setProperty('--y',(-r*100)+'%');
+    t.appendChild(p); grid.appendChild(t);
+  }
+  fig.appendChild(grid); fig.classList.add('has-tiles');
+  const go=()=>{ requestAnimationFrame(()=>fig.classList.add('tiles-go')); setTimeout(()=>fig.classList.add('tiles-done'),1500); };
+  if(fig.classList.contains('in')) go();
+  else new MutationObserver((m,o)=>{ if(fig.classList.contains('in')){ o.disconnect(); go(); } }).observe(fig,{attributes:true,attributeFilter:['class']});
 })();

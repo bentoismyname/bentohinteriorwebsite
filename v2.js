@@ -272,15 +272,20 @@
     if(bad.length){ msg.className='ebook__msg is-bad'; msg.textContent='Please fill in the highlighted fields.'; bad[0].focus(); return; }
     if(f.company.value) return;                               // honeypot: bots fill hidden fields
     const data={name:f.name.value.trim(),house:f.house.value,email:f.email.value.trim()};
-    const endpoint=form.dataset.endpoint;                     // set this to the mailing-list / form service URL
+    const endpoint=form.dataset.endpoint;                     // FormSubmit: emails each request to Benjamin at bentohint@gmail.com
+    const btn=form.querySelector('button[type=submit]'); btn.disabled=true;
     try{
-      if(endpoint){ const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); if(!r.ok) throw new Error(r.status); }
+      if(endpoint){
+        const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({...data,_subject:'Ebook request: '+data.name,_template:'table'})});
+        const j=await r.json().catch(()=>({}));
+        if(!r.ok||String(j.success)!=='true') throw new Error(j.message||r.status);
+      }
       msg.className='ebook__msg is-ok';
-      msg.textContent=endpoint
-        ? 'Thank you, '+data.name.split(' ')[0]+'. The ebook is on its way to '+data.email+'.'
-        : 'Thank you, '+data.name.split(' ')[0]+'. Ebook delivery will be switched on once the mailing service is connected.';
+      msg.textContent='Thank you, '+data.name.split(' ')[0]+'. Benjamin will send the ebook to '+data.email+'.';
       form.reset();
-    }catch(err){ msg.className='ebook__msg is-bad'; msg.textContent='Sorry, that did not go through. Please try again or email bentohjj@gmail.com.'; }
+    }catch(err){ msg.className='ebook__msg is-bad'; msg.textContent='Sorry, that did not go through. Please try again or email bentohint@gmail.com.'; }
+    finally{ btn.disabled=false; }
   });
 })();
 
